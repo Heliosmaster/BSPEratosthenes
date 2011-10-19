@@ -1,2 +1,2 @@
 all:
-	gcc -o sieve seq.c
+	gcc -o sieve seq.c -lm

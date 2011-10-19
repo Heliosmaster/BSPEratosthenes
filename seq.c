@@ -9,19 +9,20 @@ int main(int argc, char **argv){
   int N = m+1;
   
   int arr[N];
-  int out[N];
+  /*int out[N];*/
   
   int i;
   
   for (i=0;i<=N;i++) arr[i] = i;
 
   int j;
+  double k = sqrt(N);  
   
-  for(j=2;j<=N;j++){
+  for(j=2;j<=k;j++){
     if (arr[j]==0) continue;
     else {
-      for(i=2;j*i<=N;i++){
-        arr[i*j] = 0;
+      for(i=2*j;i<=N;i+=j){
+        arr[i] = 0;
       }
     }
   }
