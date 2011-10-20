@@ -14,5 +14,10 @@ BSPedupack/bspbench
 *.lai
 *.la
 *.a
+
+# Output of Gprof
+*/gmon.out
+
+#binary files
 sieve
-.redcar
+
