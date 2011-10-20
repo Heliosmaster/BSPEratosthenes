@@ -26,13 +26,13 @@ int main(int argc, char **argv){
       }
     }
   }
-  
+/*  
   for(i=2;i<=N;i++){    
     if (arr[i] != 0) printf("%d ",i);
   }
    
   printf("\n");
-  
+ */ 
   exit(1);
   
 }
