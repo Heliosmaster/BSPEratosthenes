@@ -52,6 +52,18 @@ void parSieve(){
     if (localList[j] !=0) count2++;
   }
   
+  int finalList[count2];
+  i =0;
+  j =0;
+  
+  while(i<m){
+    if (localList[i]!=0){
+      finalList[j] = localList[i];
+      j++;
+    }
+    i++;
+  }
+  
   int *globalCount;
   
   globalCount = vecalloci(p);
@@ -61,20 +73,34 @@ void parSieve(){
   for(t=0;t<p;t++){
     bsp_put(t,&count2,globalCount,s*SZINT,SZINT);
   }
+
   bsp_sync();
-  
-  printf("%d: count2=%d\n",s,count2);
-  
+    
   int sum = 0;
   for(i=0;i<p;i++) sum+=globalCount[i];
+    
+  int *result;
+  result = vecalloci(sum);
+  bsp_push_reg(result,sum*SZINT);
+  bsp_sync();
   
-  //int *result;
-  //  result = vecalloci(sum);
+  int g=0;
   
+  for(i=0;i<s;i++) g+=globalCount[i];
+  
+  
+   for(t=0;t<p;t++){
+    bsp_put(t,&finalList,result,g*SZINT,count2*SZINT);
+  }
+  bsp_sync();
+  
+  //  for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
   // for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
   //  for(i=0;i<m;i++) printf("Proc %d: l[%d]=%d\n",s,i,localList[i]);
   //  for(i=0;i<count;i++) printf("Proc %d: smallList[%d]=%d\n",s,i,primes[i]);
+  bsp_pop_reg(result);
+  vecfreei(result);
   bsp_pop_reg(globalCount);
   vecfreei(globalCount);
   bsp_end();
