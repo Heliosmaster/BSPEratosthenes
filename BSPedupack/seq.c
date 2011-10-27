@@ -2,13 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int *primes;
+int count = 0;
+
+/*
+
 int main(int argc, char **argv){
   int maxInt = 100;
   if(argc > 1)  maxInt = atoi(argv[1]);
   
   seqSieve(maxInt);
   exit(1);
-}
+  } */
 
   int seqSieve(int N){
   
@@ -43,28 +48,26 @@ int main(int argc, char **argv){
     }
     }
     
-    printf("bound is %d\n",bound);
-    printf("len is %d\n",len);
+    //  printf("bound is %d\n",bound);
+    //  printf("len is %d\n",len);
   
-    int count = 0;
+
     for(i=0;i<=len;i++){
       if (arr[i]!=0) {
         count++;
       }
     }
-    
-    printf("count is %d\n",count);
   
-   count--;
-   int out[count];
+  count--;
+  primes = (int *) malloc (count * sizeof(int));
+  
     j=0;
   
     for(i=0;i<len;i++){
       if(arr[i]!=0){
-        out[j] = arr[i];
-        //  printf("%d\n",out[j]);
+        primes[j] = arr[i];
         j++;
       }
     }    
-
+    
   }
