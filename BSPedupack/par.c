@@ -22,11 +22,14 @@ void parSieve(){
   bsp_sync();
   bsp_pop_reg(&N);
   
-  int m = N/p;
+  int q = floor(sqrt(N));
+  seqSieve(q);
+  
+  int m = (N-q)/p;
   
   int localList[m];
   int i=0;
-  int j=m*s+1;
+  int j=m*s+1+q;
   
 
   while(i<m){
@@ -35,8 +38,7 @@ void parSieve(){
     j++;
   }
   
-  int q = floor(sqrt(N));
-  seqSieve(q);
+
   
   int count2 =0;
   
@@ -52,10 +54,23 @@ void parSieve(){
     if (localList[j] !=0) count2++;
   }
   
+  if (s==0){
+    count2 += count;
+  }
+  
   int finalList[count2];
-  i =0;
+
   j =0;
   
+  if (s==0){
+    for(i=0;i<count;i++){
+      finalList[j] = primes[i];
+      j++;
+    }
+  }
+  
+  i =0;
+    
   while(i<m){
     if (localList[i]!=0){
       finalList[j] = localList[i];
@@ -96,7 +111,7 @@ void parSieve(){
   
   //  for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
-  // for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
+  //  for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
   //  for(i=0;i<m;i++) printf("Proc %d: l[%d]=%d\n",s,i,localList[i]);
   //  for(i=0;i<count;i++) printf("Proc %d: smallList[%d]=%d\n",s,i,primes[i]);
   bsp_pop_reg(result);
