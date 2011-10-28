@@ -25,18 +25,24 @@ void parSieve(){
   int q = floor(sqrt(N));
   seqSieve(q);
   
-  int m = (N-q)/p;
+  double v = N-q;
+  
+  
+  int m = ceil(v/(2*p));  
   
   int localList[m];
   int i=0;
-  int j=m*s+1+q;
+  int j=2*m*s+q+1;
   
+  if(j%2 == 0) j++;
 
-  while(i<m){
+  while(i<=m && j<=N){
     localList[i] = j;
     i++;
-    j++;
+    j+=2;
   }
+  
+  // for(i=0;i<m;i++) printf("%d: ll[%d]=%d\n",s,i,localList[i]);
   
 
   
@@ -109,7 +115,7 @@ void parSieve(){
   }
   bsp_sync();
   
-  //  for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
+  for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
   //  for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
   //  for(i=0;i<m;i++) printf("Proc %d: l[%d]=%d\n",s,i,localList[i]);
