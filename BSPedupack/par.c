@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "seq.c"
+#include "seqSieve.c"
 
   int P;
   int N;
@@ -43,8 +43,6 @@ void parSieve(){
   }
   
   // for(i=0;i<m;i++) printf("%d: ll[%d]=%d\n",s,i,localList[i]);
-  
-
   
   int count2 =0;
   
@@ -115,10 +113,10 @@ void parSieve(){
   }
   bsp_sync();
   
-  for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
+  // for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
   //  for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
-  //  for(i=0;i<m;i++) printf("Proc %d: l[%d]=%d\n",s,i,localList[i]);
+    for(i=0;i<count2;i++) printf("Proc %d: l[%d]=%d\n",s,i,finalList[i]);
   //  for(i=0;i<count;i++) printf("Proc %d: smallList[%d]=%d\n",s,i,primes[i]);
   bsp_pop_reg(result);
   vecfreei(result);
