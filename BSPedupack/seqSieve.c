@@ -48,7 +48,7 @@ ull seqSieve(ull N){
     }
   
   count--;
-  primes = (ull *) malloc (count * sizeof(unsigned lon));
+  primes = (ull *) malloc (count * sizeof(ull));
   
     j=0;
   
