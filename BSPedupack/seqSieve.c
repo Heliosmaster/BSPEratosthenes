@@ -24,11 +24,9 @@ ull seqSieve(ull N){
   for(i=1;i<z;i++){
     k = 2*i+1;
     arr[i] = k;
-  }  
-  ull len = i;  
-
+  }   
   ull j;
-  ull bound = ((int)floor(sqrt(2*len+1)))/2;
+  ull bound = ((int)floor(sqrt(2*z+1)))/2;
   ull m;
   //  double h = sqrt(N);  
   
@@ -44,27 +42,28 @@ ull seqSieve(ull N){
     //  printf("bound is %d\n",bound);
     //  printf("len is %d\n",len);
   
-
+  
     for(i=0;i<z;i++){
       if (arr[i]!=0) {
         count++;
       }
     }
-  
+    
   //count--;
   primes = (ull *) malloc (count * sizeof(ull));
   if(primes==NULL){
     printf("There was a problem allocating memory for the final array (of size %d MB).\n",count*sizeof(ull)/(1024*1024));    
     exit(0);
   }
-  
+    
     j=0;
   
-    for(i=0;i<len;i++){
+    for(i=0;i<z;i++){
       if(arr[i]!=0){
         primes[j] = arr[i];
         j++;
       }
-    }    
+    }
+    //  count = (int)j;
     free(arr);
   }
