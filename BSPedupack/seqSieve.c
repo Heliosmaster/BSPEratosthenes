@@ -28,7 +28,7 @@ ull seqSieve(ull N){
   ull j;
   ull bound = ((int)floor(sqrt(2*z+1)))/2;
   ull m;
-  //  double h = sqrt(N);  
+  //  double h = sqrt(N);
   
   for(i=1;i<=bound;i++)
   {
@@ -37,7 +37,7 @@ ull seqSieve(ull N){
     for(j=i+m;j<z;j+=m){
       arr[j] = 0;
     }
-    }
+  }
     
     //  printf("bound is %d\n",bound);
     //  printf("len is %d\n",len);

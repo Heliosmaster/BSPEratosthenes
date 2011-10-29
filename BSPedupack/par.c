@@ -12,15 +12,18 @@ void parSieve(){
   bsp_begin(P);
   int s = bsp_pid();  
   int p = bsp_nprocs();
+  double time0,time1;
   if (s==0){
      printf("Enter a bound for primes:\n"); fflush(stdout);
      scanf("%d",&N);
-  }  
+  } 
   bsp_push_reg(&N,SZINT);
   bsp_sync();
   bsp_get(0,&N,0,&N,SZINT);  
   bsp_sync();
   bsp_pop_reg(&N);
+  
+  time0 = bsp_time();
   
   int q = floor(sqrt(N));
   seqSieve(q);
@@ -45,6 +48,7 @@ void parSieve(){
   
   for(i=0;i<count;i++){
     for(j=0;j<m;j++){
+      if(localList[j]==0) continue;
       if(localList[j]%primes[i]==0){
         localList[j]=0;
       }
@@ -59,8 +63,9 @@ void parSieve(){
     count2 += count;
   }
   
-  int finalList[count2];
-
+  int *finalList;
+  finalList = vecalloci(count2);
+  //  int finalList[count2];
   j =0;
   
   if (s==0){
@@ -110,6 +115,7 @@ void parSieve(){
   }
   bsp_sync();
   
+  time1 = bsp_time();
   // for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
   //  for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
@@ -119,6 +125,8 @@ void parSieve(){
   if (s==0){
     printf("We found %d primes in parallel.\n",sum);
   }
+  printf("%d: It took %.6lf seconds.\n",s,time1-time0);
+  vecfreei(finalList);
   bsp_pop_reg(result);
   vecfreei(result);
   bsp_pop_reg(globalCount);
@@ -137,6 +145,7 @@ int main(int argc, char **argv){
         printf("Sorry, not enough processors available.\n"); fflush(stdout);
         exit(1);
     }
+    
     
     /* SPMD part */
      parSieve();
