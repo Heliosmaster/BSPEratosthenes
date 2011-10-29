@@ -18,13 +18,14 @@ ull seqSieve(ull N){
   ull i=0;
   ull k=2;
   
+  arr[0]=2;
   // Populates the array with only the even numbers
   
-  for(i=0;i<z;i++){
+  for(i=1;i<z;i++){
     k = 2*i+1;
     arr[i] = k;
-    }
-  
+  }  
+    printf("\n");
   ull len = i;  
 
   ull j;
