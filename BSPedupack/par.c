@@ -26,8 +26,7 @@ void parSieve(){
   seqSieve(q);
   
   double v = N-q;
-  
-  
+    
   int m = ceil(v/(2*p));  
   
   int localList[m];
@@ -41,8 +40,6 @@ void parSieve(){
     i++;
     j+=2;
   }
-  
-  // for(i=0;i<m;i++) printf("%d: ll[%d]=%d\n",s,i,localList[i]);
   
   int count2 =0;
   
@@ -116,8 +113,12 @@ void parSieve(){
   // for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
   //  for(i=0;i<p;i++) printf("proc %d: globalCount[%d] = %d\n",s,i,globalCount[i]);
-    for(i=0;i<count2;i++) printf("Proc %d: l[%d]=%d\n",s,i,finalList[i]);
+  //  for(i=0;i<count2;i++) printf("Proc %d: l[%d]=%d\n",s,i,finalList[i]);
   //  for(i=0;i<count;i++) printf("Proc %d: smallList[%d]=%d\n",s,i,primes[i]);
+  
+  if (s==0){
+    printf("We found %d primes in parallel.\n",sum);
+  }
   bsp_pop_reg(result);
   vecfreei(result);
   bsp_pop_reg(globalCount);
