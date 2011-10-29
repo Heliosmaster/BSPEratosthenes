@@ -6,22 +6,26 @@ int count = 0;
 
 ull seqSieve(ull N){
   
-  
-  ull arr[N];    
+  ull z = N-N/2;
+    
+  ull *arr = malloc(z*sizeof(ull));
+  if(arr==NULL){
+    printf("There was a problem allocating memory for the initial array (of size %lld MB).\n",z*sizeof(ull)/(1024*1024));    
+    exit(0);
+  }
+ 
   
   ull i=0;
   ull k=2;
   
   // Populates the array with only the even numbers
   
-  while(k<=N){
-    arr[i] = k;
-    // printf("arr[%d] = %d\n",i,k);
-    i++;
+  for(i=0;i<z;i++){
     k = 2*i+1;
-  }
+    arr[i] = k;
+    }
   
-  ull len = i;
+  ull len = i;  
 
   ull j;
   ull bound = ((int)floor(sqrt(2*len+1)))/2;
@@ -32,7 +36,7 @@ ull seqSieve(ull N){
   {
     m = arr[i];
     if (m == 0) continue;
-    for(j=i+m;j<=len;j+=m){
+    for(j=i+m;j<z;j+=m){
       arr[j] = 0;
     }
     }
@@ -41,14 +45,18 @@ ull seqSieve(ull N){
     //  printf("len is %d\n",len);
   
 
-    for(i=0;i<=len;i++){
+    for(i=0;i<z;i++){
       if (arr[i]!=0) {
         count++;
       }
     }
   
-  count--;
+  //count--;
   primes = (ull *) malloc (count * sizeof(ull));
+  if(primes==NULL){
+    printf("There was a problem allocating memory for the final array (of size %d MB).\n",count*sizeof(ull)/(1024*1024));    
+    exit(0);
+  }
   
     j=0;
   
@@ -58,5 +66,5 @@ ull seqSieve(ull N){
         j++;
       }
     }    
-    
+    free(arr);
   }
