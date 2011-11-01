@@ -83,10 +83,7 @@ void bspbench(){
         }
         time1= bsp_time(); 
         time= time1-time0; 
-//        bsp_put(0,&time,Time,s*SZDBL,SZDBL);
-	for(int t=0;t<p;t++){
-		bsp_get(t,Time,t*SZDBL,&time,SZDBL);
-	}
+        bsp_put(0,&time,Time,s*SZDBL,SZDBL);
         bsp_sync();
     
         /* Processor 0 determines minimum, maximum, average computing rate */
@@ -118,7 +115,6 @@ void bspbench(){
         /* Initialize communication pattern */
         for (i=0; i<h; i++){
             src[i]= (double)i;
-	
             if (p==1){
                 destproc[i]=0;
                 destindex[i]=i;
@@ -135,8 +131,7 @@ void bspbench(){
         time0= bsp_time(); 
         for (iter=0; iter<NITERS; iter++){
             for (i=0; i<h; i++)
-             //   bsp_put(destproc[i],&src[i],dest,destindex[i]*SZDBL,SZDBL);
-		bsp_get(destproc[i],dest,destindex[i]*SZDBL,&src[i],SZDBL);
+                bsp_put(destproc[i],&src[i],dest,destindex[i]*SZDBL,SZDBL);
             bsp_sync(); 
         }
         time1= bsp_time();
@@ -171,12 +166,13 @@ void bspbench(){
 int main(int argc, char **argv){
 
     bsp_init(bspbench, argc, argv);
-    printf("How many processors do you want to use?\n"); fflush(stdout);
+    /*printf("How many processors do you want to use?\n"); fflush(stdout);
     scanf("%d",&P);
     if (P > bsp_nprocs()){
         printf("Sorry, not enough processors available.\n");
         exit(1);
-    }
+        }*/
+        P = atoi(argv[1]);
     bspbench();
     exit(0);
 
