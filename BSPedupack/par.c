@@ -45,15 +45,35 @@ void parSieve(){
   }
   
   int count2 =0;
-  
-  for(i=0;i<count;i++){
+  /*  
+  for(i=1;i<count;i++){
+    printf("I'm considering multiples of %lld\n",primes[i]);
     for(j=0;j<m;j++){
       if(localList[j]==0) continue;
       if(localList[j]%primes[i]==0){
+        printf("%d: I'm removing ll[%d]=%d\n",s,j,localList[j]);
         localList[j]=0;
       }
     }
+    }*/
+    
+    for(i=1;i<count;i++){
+      //printf("I'm considering multiples of %lld\n",primes[i]);
+    for(j=0;j<m;j++){
+      if(localList[j]==0) continue;
+      if(localList[j]%primes[i]==0){
+        //  printf("%d: Ha! I found that the first index is %d\n",s,j);
+        break;
+      }
+    }
+    while(j<m){
+      // printf("%d: I am removing ll[%d]\n",s,j);
+      localList[j] = 0;
+      j+=primes[i];
+    }
   }
+    
+    
   
   for(j=0;j<m;j++){
     if (localList[j] !=0) count2++;
@@ -62,7 +82,7 @@ void parSieve(){
   if (s==0){
     count2 += count;
   }
-  
+  /* 
   int *finalList;
   finalList = vecalloci(count2);
   //  int finalList[count2];
@@ -84,7 +104,7 @@ void parSieve(){
     }
     i++;
   }
-  
+  */
   int *globalCount;
   
   globalCount = vecalloci(p);
@@ -96,10 +116,10 @@ void parSieve(){
   }
 
   bsp_sync();
-    
+  
   int sum = 0;
   for(i=0;i<p;i++) sum+=globalCount[i];
-    
+  /*  
   int *result;
   result = vecalloci(sum);
   bsp_push_reg(result,sum*SZINT);
@@ -114,7 +134,7 @@ void parSieve(){
     bsp_put(t,&finalList,result,g*SZINT,count2*SZINT);
   }
   bsp_sync();
-  
+  */
   time1 = bsp_time();
   // for(i=0;i<sum;i++) printf("proc: %d: result[%d]=%d\n",s,i,result[i]);
   
@@ -126,9 +146,9 @@ void parSieve(){
     printf("We found %d primes in parallel.\n",sum);
   }
   printf("%d: It took %.6lf seconds.\n",s,time1-time0);
-  vecfreei(finalList);
-  bsp_pop_reg(result);
-  vecfreei(result);
+  // vecfreei(finalList);
+  //  bsp_pop_reg(result);
+  //  vecfreei(result);
   bsp_pop_reg(globalCount);
   vecfreei(globalCount);
   bsp_end();
@@ -151,6 +171,7 @@ int main(int argc, char **argv){
      parSieve();
 
     /* sequential part */
+    free(primes);
     exit(0);
 
 }
