@@ -26,15 +26,15 @@ ull seqSieve(ull N){
     arr[i] = k;
   }   
   ull j;
-  ull bound = ((int)floor(sqrt(2*z+1)))/2;
+  ull bound = ((int)floor(sqrt(2*z+1)))/2;  
   ull m;
   //  double h = sqrt(N);
   
-  for(i=1;i<=bound;i++)
+  for(i=1;i<bound;i++)
   {
     m = arr[i];
     if (m == 0) continue;
-    for(j=i+m;j<z;j+=m){
+    for(j=i*(m+1);j<z;j+=m){
       arr[j] = 0;
     }
   }
