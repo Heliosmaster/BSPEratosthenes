@@ -1,5 +1,5 @@
 #! /bin/bash
- mpicc -o par_sieve par.c bspedupack.c -lbsponmpi -lm
+ mpicc -o par_sieve par.c bspedupack.c -lbsponmpi -lm -g
  mpirun -np 4 par_sieve
 #mpicc -c -o par.o par.c
 #mpicc -c -o bspedupack.o bspedupack.c

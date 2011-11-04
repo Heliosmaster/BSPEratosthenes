@@ -1,22 +1,21 @@
 #include <math.h>
 #define ull unsigned long long
 
-ull *primes;
+int *primes;
 int count = 0;
 
-ull seqSieve(ull N){
+int seqSieve(int N){
   
-  ull z = N-N/2;
-    
-  ull *arr = malloc(z*sizeof(ull));
+  int z = N-N/2;
+  int *arr = malloc(z*sizeof(int));
   if(arr==NULL){
-    printf("There was a problem allocating memory for the initial array (of size %lld MB).\n",z*sizeof(ull)/(1024*1024));    
+    printf("There was a problem allocating memory for the initial array (of size %d MB).\n",z*sizeof(int)/(1024*1024));    
     exit(0);
   }
  
   
-  ull i=0;
-  ull k=2;
+  int i=0;
+  int k=2;
   
   arr[0]=2;
   // Populates the array with only the even numbers
@@ -24,17 +23,20 @@ ull seqSieve(ull N){
   for(i=1;i<z;i++){
     k = 2*i+1;
     arr[i] = k;
+    //  printf("arr[%lld]=%lld\n",i,k);
   }   
-  ull j;
-  ull bound = ((int)floor(sqrt(2*z+1)))/2;  
-  ull m;
-  //  double h = sqrt(N);
+  int j;
+  int bound = ((int)ceil(sqrt(2*z+1)))/2;  
+  int m;
+  //  printf("bound:%lld\n",bound);
   
   for(i=1;i<bound;i++)
-  {
+  {    
     m = arr[i];
+    //    printf("Looking for multiples of arr[%lld]=%lld\n",i,m);
     if (m == 0) continue;
-    for(j=i*(m+1);j<z;j+=m){
+     for(j=i*(m+1);j<z;j+=m){
+      //printf("Considering arr[%lld]=%lld\n",j,arr[j]);
       arr[j] = 0;
     }
   }
@@ -50,9 +52,9 @@ ull seqSieve(ull N){
     }
     
   //count--;
-  primes = (ull *) malloc (count * sizeof(ull));
+  primes = (int *)malloc(count * sizeof(int));
   if(primes==NULL){
-    printf("There was a problem allocating memory for the final array (of size %d MB).\n",count*sizeof(ull)/(1024*1024));    
+    printf("There was a problem allocating memory for the final array (of size %d MB).\n",count*sizeof(int)/(1024*1024));    
     exit(0);
   }
     
