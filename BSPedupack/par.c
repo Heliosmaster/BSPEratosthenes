@@ -8,15 +8,16 @@
   int N;
   int q;
 
-void parSieve(){
+void parSieve(N){
   bsp_begin(P);
   int s = bsp_pid();  
   int p = bsp_nprocs();
-  double time0,time1;
+  double time0,time1,time2;
+  /*
   if (s==0){
-     printf("Enter a bound for primes:\n"); fflush(stdout);
-     scanf("%d",&N);
-  } 
+    printf("Enter a bound for primes:\n"); fflush(stdout);
+    scanf("%d",&N);
+    } */
   bsp_push_reg(&N,SZINT);
   bsp_sync();
   bsp_get(0,&N,0,&N,SZINT);  
@@ -26,26 +27,39 @@ void parSieve(){
   time0 = bsp_time();
   
   int q = floor(sqrt(N));
-//printf("%d: %d\n",s,q);
   seqSieve(q);
+  time2 = bsp_time();
   
   double v = N-q;
     
   int m = ceil(v/(2*p));  
   
-  int localList[m];
+  printf("%d: to perform the sequential part up to %d i needed %.6lf sec\n",s,q,time2-time1);
+    
+  int *localList;
+  localList = vecalloci(m);
+
   int i=0;
   int j=2*m*s+q+1;
   
   if(j%2 == 0) j++;
 
-  while(i<=m && j<=N){
+while(i<m && j<=N){
     localList[i] = j;
     i++;
     j+=2;
-  }
+
+  } 
   
+  /*while(i<m){
+    localList[i]=0;
+    i++;
+    }*/
+  
+    //  for(i=0;i<m;i++)printf("%d: localList[%d]=%d\n",s,i,localList[i]);
+      
   int count2 =0;
+  
   /*  
   for(i=1;i<count;i++){
     printf("I'm considering multiples of %lld\n",primes[i]);
@@ -58,28 +72,26 @@ void parSieve(){
     }
     }*/
     
-    // i=1 because it skips multiples of 2
-    /*    if(s==0){
-      for(i=0;i<count;i++) printf("primes[%d]=%lld\n",i,primes[i]);
-      }*/
+    // i=1 because it skips multiples of 2    
+    int k;    
     
     for(i=1;i<count;i++){
-      // printf("I'm considering multiples of %lld\n",primes[i]);
-    for(j=0;j<m;j++){
-      // printf("%d: Checking %d\n",s,localList[j]);
-      if(localList[j]==0) continue;
-      if(localList[j]%primes[i]==0){
-        //  printf("%d: Ha! I found that the first index is %d\n",s,j);
-        break;
+      k = primes[i];
+      //       printf("I'm considering multiples of %d\n",k);
+      for(j=0;j<m;j++){
+        // printf("%d: Checking %d\n",s,localList[j]);
+        if(localList[j]==0) continue;
+        if(localList[j]%k==0) {
+          //  printf("%d: Ha! I found that the first index is %d\n",s,j);
+          break;
+        }
       }
-    }
-    while(j<m){
-      // printf("%d: I am removing ll[%d]=%d\n",s,j,localList[j]);
-      localList[j] = 0;
-      j+=primes[i];
-    }
-  }
-    
+      while(j<m){
+        //  if (s==0) printf("%d: I am removing ll[%d]=%d\n",s,j,localList[j]);
+       localList[j] = 0;
+        j+=k;
+      }
+    } 
     
   
   for(j=0;j<m;j++){
@@ -157,6 +169,7 @@ void parSieve(){
   // vecfreei(finalList);
   //  bsp_pop_reg(result);
   //  vecfreei(result);
+  vecfreei(localList);
   vecfreei(globalCount);
   bsp_end();
 }
@@ -166,16 +179,20 @@ int main(int argc, char **argv){
     bsp_init(parSieve, argc, argv);
 
     /* sequential part */
-    printf("How many processors do you want to use?\n"); fflush(stdout);
-    scanf("%d",&P);
+    P = atoi(argv[1]);
+    //printf("argv[1]=%d\n",atoi(argv[1]));
+    //    printf("argv[2]=%d\n",atoi(argv[2]));
+    /*    printf("How many processors do you want to use?\n"); fflush(stdout);
+    scanf("%d",&P);*/
     if (P > bsp_nprocs()){
         printf("Sorry, not enough processors available.\n"); fflush(stdout);
         exit(1);
     }
     
+    N = atoi(argv[2]);
     
     /* SPMD part */
-     parSieve();
+     parSieve(N);
 
     /* sequential part */
     free(primes);
