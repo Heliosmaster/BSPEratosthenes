@@ -34,15 +34,17 @@ void parSieve(N){
     
   int m = ceil(v/(2*p));  
   
-  printf("%d: to perform the sequential part up to %d i needed %.6lf sec\n",s,q,time2-time1);
+  // printf("%d: to perform the sequential part up to %d i needed %.6lf sec\n",s,q,time2-time1);
     
   int *localList;
   localList = vecalloci(m);
 
   int i=0;
-  int j=2*m*s+q+1;
+  int j=2*m*s+q+1;  
   
   if(j%2 == 0) j++;
+  
+  //  printf("%d: from %d to %d\n",s,j,2*m*(s+1)+q-1);
 
 while(i<m && j<=N){
     localList[i] = j;
@@ -51,13 +53,16 @@ while(i<m && j<=N){
 
   } 
   
-  /*while(i<m){
+  while(i<m){
     localList[i]=0;
     i++;
-    }*/
-  
-    //  for(i=0;i<m;i++)printf("%d: localList[%d]=%d\n",s,i,localList[i]);
-      
+  }
+  /* 
+  if(s==0){
+      for(i=0;i<count;i++) printf("%d: primes[%d]=%d\n",s,i,primes[i]);  
+    }
+  for(i=0;i<m;i++)printf("%d: localList[%d]=%d\n",s,i,localList[i]);
+  */
   int count2 =0;
   
   /*  
@@ -76,18 +81,22 @@ while(i<m && j<=N){
     int k;    
     
     for(i=1;i<count;i++){
-      k = primes[i];
-      //       printf("I'm considering multiples of %d\n",k);
+      k = primes[count-i];
+       if (2*m*(s+1)+q < k*k) {
+        // printf("%d: skipped %d because of %d\n",s,k,k*k);
+        continue;
+        }
+      // printf("I'm considering multiples of %d\n",k);
       for(j=0;j<m;j++){
         // printf("%d: Checking %d\n",s,localList[j]);
         if(localList[j]==0) continue;
         if(localList[j]%k==0) {
-          //  printf("%d: Ha! I found that the first index is %d\n",s,j);
+          //printf("%d: Ha! I found that the first index is %d\n",s,j);
           break;
         }
       }
       while(j<m){
-        //  if (s==0) printf("%d: I am removing ll[%d]=%d\n",s,j,localList[j]);
+        //if (s==0) printf("%d: I am removing ll[%d]=%d\n",s,j,localList[j]);
        localList[j] = 0;
         j+=k;
       }
@@ -176,7 +185,7 @@ while(i<m && j<=N){
 
 int main(int argc, char **argv){
 
-    bsp_init(parSieve, argc, argv);
+    bsp_init(parSieve, argc, argv);  
 
     /* sequential part */
     P = atoi(argv[1]);
