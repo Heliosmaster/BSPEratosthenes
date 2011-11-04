@@ -26,6 +26,7 @@ void parSieve(){
   time0 = bsp_time();
   
   int q = floor(sqrt(N));
+//printf("%d: %d\n",s,q);
   seqSieve(q);
   
   double v = N-q;
@@ -57,9 +58,15 @@ void parSieve(){
     }
     }*/
     
+    // i=1 because it skips multiples of 2
+    /*    if(s==0){
+      for(i=0;i<count;i++) printf("primes[%d]=%lld\n",i,primes[i]);
+      }*/
+    
     for(i=1;i<count;i++){
-      //printf("I'm considering multiples of %lld\n",primes[i]);
+      // printf("I'm considering multiples of %lld\n",primes[i]);
     for(j=0;j<m;j++){
+      // printf("%d: Checking %d\n",s,localList[j]);
       if(localList[j]==0) continue;
       if(localList[j]%primes[i]==0){
         //  printf("%d: Ha! I found that the first index is %d\n",s,j);
@@ -67,7 +74,7 @@ void parSieve(){
       }
     }
     while(j<m){
-      // printf("%d: I am removing ll[%d]\n",s,j);
+      // printf("%d: I am removing ll[%d]=%d\n",s,j,localList[j]);
       localList[j] = 0;
       j+=primes[i];
     }
@@ -146,10 +153,10 @@ void parSieve(){
     printf("We found %d primes in parallel.\n",sum);
   }
   printf("%d: It took %.6lf seconds.\n",s,time1-time0);
+  bsp_pop_reg(globalCount);
   // vecfreei(finalList);
   //  bsp_pop_reg(result);
   //  vecfreei(result);
-  bsp_pop_reg(globalCount);
   vecfreei(globalCount);
   bsp_end();
 }

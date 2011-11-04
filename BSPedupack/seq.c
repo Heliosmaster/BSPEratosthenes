@@ -11,7 +11,8 @@ int main(int argc, char **argv){
   seqSieve(maxInt);
   
   int i;
-  //for(i=0;i<count;i++) printf("%lld ",primes[i]);
+  // for(i=0;i<count;i++) printf("%lld ",primes[i]);
+  //  printf("\n");  
   printf("I found %d primes.",count);
   printf("\n");  
   free(primes);
