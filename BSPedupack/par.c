@@ -172,6 +172,7 @@ while(i<m && j<=N){
   
   if (s==0){
     printf("We found %d primes in parallel.\n",sum);
+    printf("To perform the sequential part up to %d we needed %.6lf sec\n",q,time2-time0);
   }
   printf("%d: It took %.6lf seconds.\n",s,time1-time0);
   bsp_pop_reg(globalCount);

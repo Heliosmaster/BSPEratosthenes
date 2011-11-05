@@ -1,4 +1,4 @@
 #! /bin/bash
 #mpcc -o parbench bspbench.c bspedupack.c -lbsponmpi
-cd ..
+cd ../..
 time ./sieve $1 
