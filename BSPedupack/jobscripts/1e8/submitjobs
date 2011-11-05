@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for p in 1 2 4 8 16 32
+	do
+		llsubmit js$p
+		sleep 3
+	done

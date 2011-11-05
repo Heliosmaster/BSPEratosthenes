@@ -1,10 +1,10 @@
 # @ node = 1
 # request 4 processors
-# @ tasks_per_node = 1
+# @ tasks_per_node = 16 
 # @ notification = never
 # @ input = /dev/null
-# @ output = ../outputs/bench/out.$(jobid)
-# @ error = ../outputs/bench/err.$(jobid)
+# @ output = ../../outputs/sieve/1e8/16-out.$(jobid)
+# @ error = ../../outputs/sieve/1e8/16-err.$(jobid)
 # @ wall_clock_limit = 1:00:00
 # @ job_type = parallel
 # @ environment = OMP_NUM_THREADS=1
@@ -16,4 +16,4 @@
 # @ queue
 
 module load bsponmpi
-./bench.sh 1
+./sh_sieve.sh 16 100000000
