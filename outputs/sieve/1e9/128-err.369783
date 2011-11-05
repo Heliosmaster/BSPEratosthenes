@@ -1,0 +1,8 @@
+load SARA Compiler Wrappers (PATH).
+load IBM Java 5 SDK version 1.5 (JAVA_HOME PATH)
+load IBM XL C compiler version 10.1 (PATH, NLSPATH, MANPATH)
+load IBM XL C++ compiler version 10.1 (PATH, NLSPATH, MANPATH)
+load IBM XL Fortran compiler version 12.1 (PATH, NLSPATH, MANPATH)
+load BSPonMPI-0.3 library.
+load BSPonMPI-0.3 library.
+ATTENTION: 0031-408  128 tasks allocated by Resource Manager, continuing...
