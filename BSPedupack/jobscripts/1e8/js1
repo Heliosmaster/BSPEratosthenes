@@ -15,4 +15,8 @@
 # @ node_usage = not_shared
 # @ queue
 
+echo job started on `date "+%A %e %B %Y, at %T"`
+
 ./sh_seqsieve.sh 100000000
+
+echo job completed on `date "+%A %e %B %Y, at %T"`
