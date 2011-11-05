@@ -5,4 +5,4 @@ load IBM XL C++ compiler version 10.1 (PATH, NLSPATH, MANPATH)
 load IBM XL Fortran compiler version 12.1 (PATH, NLSPATH, MANPATH)
 load BSPonMPI-0.3 library.
 load BSPonMPI-0.3 library.
-/var/loadl/execute/p6012.huygens.sara.nl.369741.0/js: line 19: ./sh_sieve: No such file or directory
+ATTENTION: 0031-408  16 tasks allocated by Resource Manager, continuing...

@@ -1,0 +1,173 @@
+$MP_PROCS is set to 4.
+We found 50847534 primes in parallel.
+To perform the sequential part up to 31622 we needed 0.000862 sec
+0: It took 5.795963 seconds.
+1: It took 5.795961 seconds.
+4: It took 5.795962 seconds.
+5: It took 5.795959 seconds.
+2: It took 5.795956 seconds.
+3: It took 5.795954 seconds.
+6: It took 5.795969 seconds.
+7: It took 5.795968 seconds.
+
+### Summarized output of "llq -l -x -j p6012.huygens.sara.nl.369809.0" invoked on p6004 ###
+        Job Step Id: p6012.huygens.sara.nl.369809.0
+           Job Name: p6012.huygens.sara.nl.369809
+          Step Name: 0
+  Structure Version: 10
+              Owner: bissstud
+         Queue Date: Sat Nov  5 21:33:54 2011
+             Status: Running
+          Recurring: False
+      Dispatch Time: Sat Nov  5 21:34:13 2011
+    Completion Date: Sat Nov  5 21:34:32 CET 2011 (i.e. time of job epilog invocation)
+        Favored Job: No
+      Notifications: Never
+ Virtual Image Size: 1 kb
+         Large Page: N
+         Coschedule: no
+       SMT required: as_is
+    MetaCluster Job: no
+     Checkpointable: no
+   Ckpt Elapse Time: 0 seconds
+    Ckpt Accum Time: 0 seconds
+  Restart From Ckpt: no
+ Restart Same Nodes: no
+            Restart: no
+        Preemptable: yes
+ Preempt Wait Count: 0
+     User Hold Time: 00:00:00 (0 seconds)
+               RSet: RSET_MCM_AFFINITY
+Mcm Affinity Option: MCM_DISTRIBUTE MCM_MEM_PREF MCM_SNI_NONE
+      Task Affinity: core(1)
+      Cpus Per Core:  0
+   Parallel Threads:  0
+                Env: OMP_NUM_THREADS=1
+                 In: /dev/null
+                Out: ../../../outputs/sieve/1e9/8-out.369809
+                Err: ../../../outputs/sieve/1e9/8-err.369809
+Initial Working Dir: /gpfs/h05/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9
+          Resources: ConsumableMemory(2.000 gb)
+          Step Type: General Parallel
+         Node Usage: not_shared
+    Submitting Host: p6012.huygens.sara.nl
+        Schedd Host: p6012.huygens.sara.nl
+      Job Queue Key: 369809
+        Notify User: bissstud@p6012.huygens.sara.nl
+              Shell: /bin/bash
+  LoadLeveler Group: No_Group
+              Class: short
+    Ckpt Hard Limit: undefined
+    Ckpt Soft Limit: undefined
+     Cpu Hard Limit: unlimited
+     Cpu Soft Limit: unlimited
+    Data Hard Limit: undefined
+    Data Soft Limit: undefined
+      As Hard Limit: undefined
+      As Soft Limit: undefined
+   Nproc Hard Limit: undefined
+   Nproc Soft Limit: undefined
+ Memlock Hard Limit: undefined
+ Memlock Soft Limit: undefined
+   Locks Hard Limit: undefined
+   Locks Soft Limit: undefined
+  Nofile Hard Limit: undefined
+  Nofile Soft Limit: undefined
+    Core Hard Limit: unlimited
+    Core Soft Limit: 0 bytes
+    File Hard Limit: undefined
+    File Soft Limit: undefined
+   Stack Hard Limit: unlimited
+   Stack Soft Limit: unlimited
+     Rss Hard Limit: undefined
+     Rss Soft Limit: undefined
+Step Cpu Hard Limit: unlimited
+Step Cpu Soft Limit: unlimited
+Wall Clk Hard Limit: 01:00:00 (3600 seconds)
+Wall Clk Soft Limit: 01:00:00 (3600 seconds)
+         Unix Group: bissstud
+ User Space Windows: 0
+      Bulk Transfer: No
+Adapter Requirement: (sn_all,MPI,US,not_shared,AVERAGE,instances=1,)
+          Step Cpus: 0
+Step Virtual Memory: 0.000 mb
+   Step Real Memory: 16.000 gb
+Step Large Page Mem: 0.000 mb
+       Running Host: p6004.huygens.sara.nl
+      Machine Speed: 1.000000
+  Starter User Time: 00:00:00.000000
+Starter System Time: 00:00:00.000000
+ Starter Total Time: 00:00:00.000000
+     Starter maxrss: 0
+      Starter ixrss: 0
+      Starter idrss: 0
+      Starter isrss: 0
+     Starter minflt: 0
+     Starter majflt: 0
+      Starter nswap: 0
+    Starter inblock: 0
+    Starter oublock: 0
+     Starter msgsnd: 0
+     Starter msgrcv: 0
+   Starter nsignals: 0
+      Starter nvcsw: 0
+     Starter nivcsw: 0
+     Step User Time: 00:00:00.000000
+   Step System Time: 00:00:00.000000
+    Step Total Time: 00:00:00.000000
+        Step maxrss: 0
+         Step ixrss: 0
+         Step idrss: 0
+         Step isrss: 0
+        Step minflt: 0
+        Step majflt: 0
+         Step nswap: 0
+       Step inblock: 0
+       Step oublock: 0
+        Step msgsnd: 0
+        Step msgrcv: 0
+      Step nsignals: 0
+         Step nvcsw: 0
+        Step nivcsw: 0
+     Cluster Option: none
+     Network Usages: 0(1,MPI,US,1,0),
+Stripe Min Networks: False
+--------------------------------------------------------------------------------
+Node
+----
+
+   Name            : 
+   Requirements    : (Memory >= 4096 )
+   Preferences     : 
+   Node minimum    : 1
+   Node maximum    : 1
+   Node actual     : 1
+   Allocated Hosts : p6004.huygens.sara.nl:RUNNING:,MCM0:CPU< 0-1 >,MCM1:CPU< 16-17 >,MCM2:CPU< 32-33 >,MCM3:CPU< 48-49 >,MCM0:CPU< 2-3 >,MCM1:CPU< 18-19 >,MCM2:CPU< 34-35 >,MCM3:CPU< 50-51 >
+
+   Master Task
+   -----------
+
+      Executable   : /home/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9/js8
+      Exec Args    : 
+      Num Task Inst: 1
+      Task Instance: p6004:-1:,
+
+   Task
+   ----
+
+      Num Task Inst: 8
+      Task Instance: p6004:0:,MCM0:CPU< 0-1 >
+      Task Instance: p6004:1:,MCM1:CPU< 16-17 >
+      Task Instance: p6004:2:,MCM2:CPU< 32-33 >
+      Task Instance: p6004:3:,MCM3:CPU< 48-49 >
+      Task Instance: p6004:4:,MCM0:CPU< 2-3 >
+      Task Instance: p6004:5:,MCM1:CPU< 18-19 >
+      Task Instance: p6004:6:,MCM2:CPU< 34-35 >
+      Task Instance: p6004:7:,MCM3:CPU< 50-51 >
+--------------------------------------------------------------------------------
+Job Step Status on Allocated Hosts 
+----------------------------------
+
+    p6004.huygens.sara.nl:RUNNING
+
+### End of summarized "llq" output ###

@@ -1,16 +1,22 @@
 $MP_PROCS is set to 4.
+We found 50847534 primes in parallel.
+To perform the sequential part up to 31622 we needed 0.000864 sec
+0: It took 8.655356 seconds.
+1: It took 8.655355 seconds.
+2: It took 8.655341 seconds.
+3: It took 8.655346 seconds.
 
-### Summarized output of "llq -l -x -j p6012.huygens.sara.nl.369741.0" invoked on p6003 ###
-        Job Step Id: p6012.huygens.sara.nl.369741.0
-           Job Name: p6012.huygens.sara.nl.369741
+### Summarized output of "llq -l -x -j p6012.huygens.sara.nl.369808.0" invoked on p6003 ###
+        Job Step Id: p6012.huygens.sara.nl.369808.0
+           Job Name: p6012.huygens.sara.nl.369808
           Step Name: 0
   Structure Version: 10
               Owner: bissstud
-         Queue Date: Sat Nov  5 18:10:29 2011
+         Queue Date: Sat Nov  5 21:33:46 2011
              Status: Running
           Recurring: False
-      Dispatch Time: Sat Nov  5 18:10:46 2011
-    Completion Date: Sat Nov  5 18:10:54 CET 2011 (i.e. time of job epilog invocation)
+      Dispatch Time: Sat Nov  5 21:34:13 2011
+    Completion Date: Sat Nov  5 21:34:34 CET 2011 (i.e. time of job epilog invocation)
         Favored Job: No
       Notifications: Never
  Virtual Image Size: 1 kb
@@ -34,15 +40,15 @@ Mcm Affinity Option: MCM_DISTRIBUTE MCM_MEM_PREF MCM_SNI_NONE
    Parallel Threads:  0
                 Env: OMP_NUM_THREADS=1
                  In: /dev/null
-                Out: ../outputs/sieve/2-out.369741
-                Err: ../outputs/sieve/2-err.369741
-Initial Working Dir: /gpfs/h05/bissstud/Students11/d.taviani/parAlg/BSPedupack/js_sieve
+                Out: ../../../outputs/sieve/1e9/4-out.369808
+                Err: ../../../outputs/sieve/1e9/4-err.369808
+Initial Working Dir: /gpfs/h05/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9
           Resources: ConsumableMemory(2.000 gb)
           Step Type: General Parallel
          Node Usage: not_shared
     Submitting Host: p6012.huygens.sara.nl
         Schedd Host: p6012.huygens.sara.nl
-      Job Queue Key: 369741
+      Job Queue Key: 369808
         Notify User: bissstud@p6012.huygens.sara.nl
               Shell: /bin/bash
   LoadLeveler Group: No_Group
@@ -81,7 +87,7 @@ Wall Clk Soft Limit: 01:00:00 (3600 seconds)
 Adapter Requirement: (sn_all,MPI,US,not_shared,AVERAGE,instances=1,)
           Step Cpus: 0
 Step Virtual Memory: 0.000 mb
-   Step Real Memory: 4.000 gb
+   Step Real Memory: 8.000 gb
 Step Large Page Mem: 0.000 mb
        Running Host: p6003.huygens.sara.nl
       Machine Speed: 1.000000
@@ -132,12 +138,12 @@ Node
    Node minimum    : 1
    Node maximum    : 1
    Node actual     : 1
-   Allocated Hosts : p6003.huygens.sara.nl:RUNNING:,MCM0:CPU< 0-1 >,MCM1:CPU< 16-17 >
+   Allocated Hosts : p6003.huygens.sara.nl:RUNNING:,MCM0:CPU< 0-1 >,MCM1:CPU< 16-17 >,MCM2:CPU< 32-33 >,MCM3:CPU< 48-49 >
 
    Master Task
    -----------
 
-      Executable   : /home/bissstud/Students11/d.taviani/parAlg/BSPedupack/js_sieve/js
+      Executable   : /home/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9/js4
       Exec Args    : 
       Num Task Inst: 1
       Task Instance: p6003:-1:,
@@ -145,9 +151,11 @@ Node
    Task
    ----
 
-      Num Task Inst: 2
+      Num Task Inst: 4
       Task Instance: p6003:0:,MCM0:CPU< 0-1 >
       Task Instance: p6003:1:,MCM1:CPU< 16-17 >
+      Task Instance: p6003:2:,MCM2:CPU< 32-33 >
+      Task Instance: p6003:3:,MCM3:CPU< 48-49 >
 --------------------------------------------------------------------------------
 Job Step Status on Allocated Hosts 
 ----------------------------------

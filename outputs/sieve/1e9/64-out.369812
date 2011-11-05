@@ -1,0 +1,287 @@
+$MP_PROCS is set to 4.
+62: It took 1.225861 seconds.
+We found 50847534 primes in parallel.
+To perform the sequential part up to 31622 we needed 0.000851 sec
+0: It took 1.225797 seconds.
+63: It took 1.225919 seconds.
+1: It took 1.226015 seconds.
+61: It took 1.225799 seconds.
+29: It took 1.225173 seconds.
+2: It took 1.225435 seconds.
+3: It took 1.225916 seconds.
+4: It took 1.225009 seconds.
+5: It took 1.225962 seconds.
+6: It took 1.224829 seconds.
+32: It took 1.225459 seconds.
+7: It took 1.225923 seconds.
+34: It took 1.225216 seconds.
+8: It took 1.224714 seconds.
+59: It took 1.225435 seconds.
+9: It took 1.225451 seconds.
+60: It took 1.226016 seconds.
+10: It took 1.224736 seconds.
+35: It took 1.225925 seconds.
+11: It took 1.225108 seconds.
+48: It took 1.225260 seconds.
+12: It took 1.224743 seconds.
+52: It took 1.225449 seconds.
+13: It took 1.225113 seconds.
+54: It took 1.225921 seconds.
+14: It took 1.224796 seconds.
+57: It took 1.225009 seconds.
+16: It took 1.224807 seconds.
+58: It took 1.225767 seconds.
+18: It took 1.224838 seconds.
+33: It took 1.225625 seconds.
+20: It took 1.225067 seconds.
+36: It took 1.225576 seconds.
+22: It took 1.225261 seconds.
+37: It took 1.225651 seconds.
+23: It took 1.225519 seconds.
+38: It took 1.225658 seconds.
+25: It took 1.225577 seconds.
+39: It took 1.225393 seconds.
+27: It took 1.225221 seconds.
+40: It took 1.225869 seconds.
+28: It took 1.225626 seconds.
+41: It took 1.225198 seconds.
+30: It took 1.225994 seconds.
+42: It took 1.225954 seconds.
+31: It took 1.225982 seconds.
+43: It took 1.224845 seconds.
+15: It took 1.225536 seconds.
+44: It took 1.225542 seconds.
+17: It took 1.225503 seconds.
+45: It took 1.224848 seconds.
+19: It took 1.225754 seconds.
+46: It took 1.225572 seconds.
+21: It took 1.225869 seconds.
+47: It took 1.224793 seconds.
+24: It took 1.225623 seconds.
+49: It took 1.225038 seconds.
+26: It took 1.225926 seconds.
+50: It took 1.225100 seconds.
+51: It took 1.224735 seconds.
+53: It took 1.224713 seconds.
+55: It took 1.225039 seconds.
+56: It took 1.225962 seconds.
+
+### Summarized output of "llq -l -x -j p6012.huygens.sara.nl.369812.0" invoked on p6084 ###
+        Job Step Id: p6012.huygens.sara.nl.369812.0
+           Job Name: p6012.huygens.sara.nl.369812
+          Step Name: 0
+  Structure Version: 10
+              Owner: bissstud
+         Queue Date: Sat Nov  5 21:34:20 2011
+             Status: Running
+          Recurring: False
+      Dispatch Time: Sat Nov  5 21:34:44 2011
+    Completion Date: Sat Nov  5 21:35:05 CET 2011 (i.e. time of job epilog invocation)
+        Favored Job: No
+      Notifications: Never
+ Virtual Image Size: 1 kb
+         Large Page: N
+         Coschedule: no
+       SMT required: as_is
+    MetaCluster Job: no
+     Checkpointable: no
+   Ckpt Elapse Time: 0 seconds
+    Ckpt Accum Time: 0 seconds
+  Restart From Ckpt: no
+ Restart Same Nodes: no
+            Restart: no
+        Preemptable: yes
+ Preempt Wait Count: 0
+     User Hold Time: 00:00:00 (0 seconds)
+               RSet: RSET_MCM_AFFINITY
+Mcm Affinity Option: MCM_DISTRIBUTE MCM_MEM_PREF MCM_SNI_NONE
+      Task Affinity: core(1)
+      Cpus Per Core:  0
+   Parallel Threads:  0
+                Env: OMP_NUM_THREADS=1
+                 In: /dev/null
+                Out: ../../../outputs/sieve/1e9/64-out.369812
+                Err: ../../../outputs/sieve/1e9/64-err.369812
+Initial Working Dir: /gpfs/h05/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9
+          Resources: ConsumableMemory(2.000 gb)
+          Step Type: General Parallel
+         Node Usage: not_shared
+    Submitting Host: p6012.huygens.sara.nl
+        Schedd Host: p6012.huygens.sara.nl
+      Job Queue Key: 369812
+        Notify User: bissstud@p6012.huygens.sara.nl
+              Shell: /bin/bash
+  LoadLeveler Group: No_Group
+              Class: short
+    Ckpt Hard Limit: undefined
+    Ckpt Soft Limit: undefined
+     Cpu Hard Limit: unlimited
+     Cpu Soft Limit: unlimited
+    Data Hard Limit: undefined
+    Data Soft Limit: undefined
+      As Hard Limit: undefined
+      As Soft Limit: undefined
+   Nproc Hard Limit: undefined
+   Nproc Soft Limit: undefined
+ Memlock Hard Limit: undefined
+ Memlock Soft Limit: undefined
+   Locks Hard Limit: undefined
+   Locks Soft Limit: undefined
+  Nofile Hard Limit: undefined
+  Nofile Soft Limit: undefined
+    Core Hard Limit: unlimited
+    Core Soft Limit: 0 bytes
+    File Hard Limit: undefined
+    File Soft Limit: undefined
+   Stack Hard Limit: unlimited
+   Stack Soft Limit: unlimited
+     Rss Hard Limit: undefined
+     Rss Soft Limit: undefined
+Step Cpu Hard Limit: unlimited
+Step Cpu Soft Limit: unlimited
+Wall Clk Hard Limit: 01:00:00 (3600 seconds)
+Wall Clk Soft Limit: 01:00:00 (3600 seconds)
+         Unix Group: bissstud
+ User Space Windows: 0
+      Bulk Transfer: No
+Adapter Requirement: (sn_all,MPI,US,not_shared,AVERAGE,instances=1,)
+          Step Cpus: 0
+Step Virtual Memory: 0.000 mb
+   Step Real Memory: 128.000 gb
+Step Large Page Mem: 0.000 mb
+       Running Host: p6084.huygens.sara.nl
+      Machine Speed: 1.000000
+  Starter User Time: 00:00:00.000000
+Starter System Time: 00:00:00.000000
+ Starter Total Time: 00:00:00.000000
+     Starter maxrss: 0
+      Starter ixrss: 0
+      Starter idrss: 0
+      Starter isrss: 0
+     Starter minflt: 0
+     Starter majflt: 0
+      Starter nswap: 0
+    Starter inblock: 0
+    Starter oublock: 0
+     Starter msgsnd: 0
+     Starter msgrcv: 0
+   Starter nsignals: 0
+      Starter nvcsw: 0
+     Starter nivcsw: 0
+     Step User Time: 00:00:00.000000
+   Step System Time: 00:00:00.000000
+    Step Total Time: 00:00:00.000000
+        Step maxrss: 0
+         Step ixrss: 0
+         Step idrss: 0
+         Step isrss: 0
+        Step minflt: 0
+        Step majflt: 0
+         Step nswap: 0
+       Step inblock: 0
+       Step oublock: 0
+        Step msgsnd: 0
+        Step msgrcv: 0
+      Step nsignals: 0
+         Step nvcsw: 0
+        Step nivcsw: 0
+     Cluster Option: none
+     Network Usages: 0(1,MPI,US,1,0),
+Stripe Min Networks: False
+--------------------------------------------------------------------------------
+Node
+----
+
+   Name            : 
+   Requirements    : (Memory >= 4096 )
+   Preferences     : 
+   Node minimum    : 2
+   Node maximum    : 2
+   Node actual     : 2
+   Allocated Hosts : p6084.huygens.sara.nl:RUNNING:,MCM0:CPU< 0-1 >,MCM1:CPU< 16-17 >,MCM2:CPU< 32-33 >,MCM3:CPU< 48-49 >,MCM0:CPU< 2-3 >,MCM1:CPU< 18-19 >,MCM2:CPU< 34-35 >,MCM3:CPU< 50-51 >,MCM0:CPU< 4-5 >,MCM1:CPU< 20-21 >,MCM2:CPU< 36-37 >,MCM3:CPU< 52-53 >,MCM0:CPU< 6-7 >,MCM1:CPU< 22-23 >,MCM2:CPU< 38-39 >,MCM3:CPU< 54-55 >,MCM0:CPU< 8-9 >,MCM1:CPU< 24-25 >,MCM2:CPU< 40-41 >,MCM3:CPU< 56-57 >,MCM0:CPU< 10-11 >,MCM1:CPU< 26-27 >,MCM2:CPU< 42-43 >,MCM3:CPU< 58-59 >,MCM0:CPU< 12-13 >,MCM1:CPU< 28-29 >,MCM2:CPU< 44-45 >,MCM3:CPU< 60-61 >,MCM0:CPU< 14-15 >,MCM1:CPU< 30-31 >,MCM2:CPU< 46-47 >,MCM3:CPU< 62-63 >
+                   + p6004.huygens.sara.nl:RUNNING:,MCM0:CPU< 0-1 >,MCM1:CPU< 16-17 >,MCM2:CPU< 32-33 >,MCM3:CPU< 48-49 >,MCM0:CPU< 2-3 >,MCM1:CPU< 18-19 >,MCM2:CPU< 34-35 >,MCM3:CPU< 50-51 >,MCM0:CPU< 4-5 >,MCM1:CPU< 20-21 >,MCM2:CPU< 36-37 >,MCM3:CPU< 52-53 >,MCM0:CPU< 6-7 >,MCM1:CPU< 22-23 >,MCM2:CPU< 38-39 >,MCM3:CPU< 54-55 >,MCM0:CPU< 8-9 >,MCM1:CPU< 24-25 >,MCM2:CPU< 40-41 >,MCM3:CPU< 56-57 >,MCM0:CPU< 10-11 >,MCM1:CPU< 26-27 >,MCM2:CPU< 42-43 >,MCM3:CPU< 58-59 >,MCM0:CPU< 12-13 >,MCM1:CPU< 28-29 >,MCM2:CPU< 44-45 >,MCM3:CPU< 60-61 >,MCM0:CPU< 14-15 >,MCM1:CPU< 30-31 >,MCM2:CPU< 46-47 >,MCM3:CPU< 62-63 >
+
+   Master Task
+   -----------
+
+      Executable   : /home/bissstud/Students11/d.taviani/parAlg/BSPedupack/jobscripts/1e9/js64
+      Exec Args    : 
+      Num Task Inst: 1
+      Task Instance: p6084:-1:,
+
+   Task
+   ----
+
+      Num Task Inst: 64
+      Task Instance: p6084:0:,MCM0:CPU< 0-1 >
+      Task Instance: p6084:1:,MCM1:CPU< 16-17 >
+      Task Instance: p6084:2:,MCM2:CPU< 32-33 >
+      Task Instance: p6084:3:,MCM3:CPU< 48-49 >
+      Task Instance: p6084:4:,MCM0:CPU< 2-3 >
+      Task Instance: p6084:5:,MCM1:CPU< 18-19 >
+      Task Instance: p6084:6:,MCM2:CPU< 34-35 >
+      Task Instance: p6084:7:,MCM3:CPU< 50-51 >
+      Task Instance: p6084:8:,MCM0:CPU< 4-5 >
+      Task Instance: p6084:9:,MCM1:CPU< 20-21 >
+      Task Instance: p6084:10:,MCM2:CPU< 36-37 >
+      Task Instance: p6084:11:,MCM3:CPU< 52-53 >
+      Task Instance: p6084:12:,MCM0:CPU< 6-7 >
+      Task Instance: p6084:13:,MCM1:CPU< 22-23 >
+      Task Instance: p6084:14:,MCM2:CPU< 38-39 >
+      Task Instance: p6084:15:,MCM3:CPU< 54-55 >
+      Task Instance: p6084:16:,MCM0:CPU< 8-9 >
+      Task Instance: p6084:17:,MCM1:CPU< 24-25 >
+      Task Instance: p6084:18:,MCM2:CPU< 40-41 >
+      Task Instance: p6084:19:,MCM3:CPU< 56-57 >
+      Task Instance: p6084:20:,MCM0:CPU< 10-11 >
+      Task Instance: p6084:21:,MCM1:CPU< 26-27 >
+      Task Instance: p6084:22:,MCM2:CPU< 42-43 >
+      Task Instance: p6084:23:,MCM3:CPU< 58-59 >
+      Task Instance: p6084:24:,MCM0:CPU< 12-13 >
+      Task Instance: p6084:25:,MCM1:CPU< 28-29 >
+      Task Instance: p6084:26:,MCM2:CPU< 44-45 >
+      Task Instance: p6084:27:,MCM3:CPU< 60-61 >
+      Task Instance: p6084:28:,MCM0:CPU< 14-15 >
+      Task Instance: p6084:29:,MCM1:CPU< 30-31 >
+      Task Instance: p6084:30:,MCM2:CPU< 46-47 >
+      Task Instance: p6084:31:,MCM3:CPU< 62-63 >
+      Task Instance: p6004:32:,MCM0:CPU< 0-1 >
+      Task Instance: p6004:33:,MCM1:CPU< 16-17 >
+      Task Instance: p6004:34:,MCM2:CPU< 32-33 >
+      Task Instance: p6004:35:,MCM3:CPU< 48-49 >
+      Task Instance: p6004:36:,MCM0:CPU< 2-3 >
+      Task Instance: p6004:37:,MCM1:CPU< 18-19 >
+      Task Instance: p6004:38:,MCM2:CPU< 34-35 >
+      Task Instance: p6004:39:,MCM3:CPU< 50-51 >
+      Task Instance: p6004:40:,MCM0:CPU< 4-5 >
+      Task Instance: p6004:41:,MCM1:CPU< 20-21 >
+      Task Instance: p6004:42:,MCM2:CPU< 36-37 >
+      Task Instance: p6004:43:,MCM3:CPU< 52-53 >
+      Task Instance: p6004:44:,MCM0:CPU< 6-7 >
+      Task Instance: p6004:45:,MCM1:CPU< 22-23 >
+      Task Instance: p6004:46:,MCM2:CPU< 38-39 >
+      Task Instance: p6004:47:,MCM3:CPU< 54-55 >
+      Task Instance: p6004:48:,MCM0:CPU< 8-9 >
+      Task Instance: p6004:49:,MCM1:CPU< 24-25 >
+      Task Instance: p6004:50:,MCM2:CPU< 40-41 >
+      Task Instance: p6004:51:,MCM3:CPU< 56-57 >
+      Task Instance: p6004:52:,MCM0:CPU< 10-11 >
+      Task Instance: p6004:53:,MCM1:CPU< 26-27 >
+      Task Instance: p6004:54:,MCM2:CPU< 42-43 >
+      Task Instance: p6004:55:,MCM3:CPU< 58-59 >
+      Task Instance: p6004:56:,MCM0:CPU< 12-13 >
+      Task Instance: p6004:57:,MCM1:CPU< 28-29 >
+      Task Instance: p6004:58:,MCM2:CPU< 44-45 >
+      Task Instance: p6004:59:,MCM3:CPU< 60-61 >
+      Task Instance: p6004:60:,MCM0:CPU< 14-15 >
+      Task Instance: p6004:61:,MCM1:CPU< 30-31 >
+      Task Instance: p6004:62:,MCM2:CPU< 46-47 >
+      Task Instance: p6004:63:,MCM3:CPU< 62-63 >
+--------------------------------------------------------------------------------
+Job Step Status on Allocated Hosts 
+----------------------------------
+
+    p6084.huygens.sara.nl:RUNNING
+    p6004.huygens.sara.nl:RUNNING
+
+### End of summarized "llq" output ###
