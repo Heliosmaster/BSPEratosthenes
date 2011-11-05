@@ -19,8 +19,8 @@ BSPedupack/bspbench
 */gmon.out
 
 #binary files
-sieve
-par_sieve
-outputs
-bench
-bench_get
+BSPedupack/sieve
+BSPedupack/par_sieve
+
+BSPedupack/bench
+BSPedupack/bench_get
