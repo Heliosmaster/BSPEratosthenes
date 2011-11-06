@@ -1,10 +1,10 @@
-# @ node = 4 
+# @ node = 8 
 # request 4 processors
 # @ tasks_per_node = 32
 # @ notification = never
 # @ input = /dev/null
-# @ output = ../outputs/bench/put/128-out.$(jobid)
-# @ error = ../outputs/bench/put/128-err.$(jobid)
+# @ output = ../outputs/bench/put/256-out.$(jobid)
+# @ error = ../outputs/bench/put/256-err.$(jobid)
 # @ wall_clock_limit = 1:00:00
 # @ job_type = parallel
 # @ environment = OMP_NUM_THREADS=1
@@ -16,4 +16,4 @@
 # @ queue
 
 module load bsponmpi
-./bench.sh 128 
+./bench.sh 256
