@@ -1,10 +1,10 @@
-# @ node = 8 
+# @ node = 1 
 # request 4 processors
-# @ tasks_per_node = 32
+# @ tasks_per_node = 1
 # @ notification = never
 # @ input = /dev/null
-# @ output = ../outputs/bench/put/256-out.$(jobid)
-# @ error = ../outputs/bench/put/256-err.$(jobid)
+# @ output = /home/bissstud/~/Students11/d.taviani/parAlg/outputs/bench/put/1-out.$(jobid)
+# @ error = /home/bissstud/~/Students11/d.taviani/parAlg/outputs/bench/put/1-err.$(jobid)
 # @ wall_clock_limit = 1:00:00
 # @ job_type = parallel
 # @ environment = OMP_NUM_THREADS=1
@@ -16,4 +16,4 @@
 # @ queue
 
 module load bsponmpi
-./bench.sh 256
+./bench.sh 1
