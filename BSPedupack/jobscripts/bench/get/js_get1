@@ -1,0 +1,19 @@
+# @ node = 1 
+# request 4 processors
+# @ tasks_per_node = 1
+# @ notification = never
+# @ input = /dev/null
+# @ output = /home/bissstud/Students11/d.taviani/parAlg/outputs/bench/get/1-out.$(jobid)
+# @ error = /home/bissstud/Students11/d.taviani/parAlg/outputs/bench/get/1-err.$(jobid)
+# @ wall_clock_limit = 1:00:00
+# @ job_type = parallel
+# @ environment = OMP_NUM_THREADS=1
+# @ requirements = (Memory >= 4096 )
+# @ rset = rset_mcm_affinity
+# @ mcm_affinity_options = mcm_distribute mcm_mem_pref mcm_sni_none
+#
+# @ node_usage = not_shared
+# @ queue
+
+module load bsponmpi
+./bench_get.sh 1
