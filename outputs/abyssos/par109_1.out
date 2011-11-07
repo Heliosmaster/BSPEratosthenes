@@ -1,0 +1,3 @@
+We found 50847534 primes in parallel.
+To perform the sequential part up to 31622 we needed 0.000145 sec
+0: It took 48.738356 seconds.
