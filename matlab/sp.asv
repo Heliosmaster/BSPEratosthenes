@@ -1,0 +1,27 @@
+clear all; close all;
+f = dlmread('sp1e8.txt');
+huy = f(:,[1 3]);
+aby = f(1:size(f,1)-1,[4 6]);
+
+huy_seq = huy(1,2);
+aby_seq = abt(1,2);
+v = 1;
+for i=2:size(huy,1)
+    r = huy_seq/huy(i,2);
+    v = [v r];
+end
+
+w = 1;
+for j=2:size(aby,1)
+     s = aby_seq/aby(j,2);
+    w = [w r];
+end
+plot(huy(1:6,1),v(1:6),'-*');
+
+hold on;
+plot(huy(1:6,1),huy(1:6,1),'r');
+plot(aby(1:6,1),v(1:6),'-*');
+legend('Huygens','Ideal');
+
+legend('Location','SouthEast');
+set(1,'Position',[386 91 588 567]);

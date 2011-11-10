@@ -1,0 +1,14 @@
+str = '32-put.txt';
+pts = dlmread(str);
+n = size(pts,1);
+B = pts(:,2);
+C = [];
+for i=2:n
+    C = [C; i-1 B(i)];
+end
+c1 = C(:,1);
+c2 = C(:,2);
+%scatter(C(:,1),C(:,2),'*');
+%figure;
+createFit(c1,c2);
+print -dps
