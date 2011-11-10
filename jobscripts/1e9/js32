@@ -1,12 +1,12 @@
-## @ node = 1
+# @ node = 1
 # request 4 processors
-## @ tasks_per_node = 1 
+# @ tasks_per_node = 32 
 # @ notification = never
 # @ input = /dev/null
-# @ output = ../../../outputs/sieve/1e8/1-out.$(jobid)
-# @ error = ../../../outputs/sieve/1e8/1-err.$(jobid)
+# @ output = ../../outputs/sieve/huygens/1e9/32-out.$(jobid)
+# @ error = ../../outputs/sieve/huygens/1e9/32-err.$(jobid)
 # @ wall_clock_limit = 1:00:00
-# @ job_type = serial
+# @ job_type = parallel
 # @ environment = OMP_NUM_THREADS=1
 # @ requirements = (Memory >= 4096 )
 # @ rset = rset_mcm_affinity
@@ -15,8 +15,5 @@
 # @ node_usage = not_shared
 # @ queue
 
-echo job started on `date "+%A %e %B %Y, at %T"`
-
-./sh_seqsieve.sh 100000000
-
-echo job completed on `date "+%A %e %B %Y, at %T"`
+module load bsponmpi
+./sh_sieve.sh 32 1000000000
