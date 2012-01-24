@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Erathostenes' Sieve}{}
+\BOOKMARK [2][-]{subsection.2.1}{Description of the sequential algorithm}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Parallel implementation}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Analysis of the BSP cost}{section.2}
+\BOOKMARK [1][-]{section.3}{Numerical experiments}{}
+\BOOKMARK [2][-]{subsection.3.1}{Benchmarking: r, g and l}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{h-relations and flops}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{bsp\137put}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{bsp\137get}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Remarks}{subsection.3.2}
+\BOOKMARK [2][-]{subsection.3.3}{Experimental results}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Primes up to 108}{subsection.3.3}
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Primes up to 109}{subsection.3.3}
+\BOOKMARK [1][-]{section.4}{Conclusions and further developments}{}

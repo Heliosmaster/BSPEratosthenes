@@ -1,3 +1,0 @@
-h1. parAlg
-
-This online repository on GitHub contains the files for projects for the Mastermath course "Parallel Algorithms":http://www.staff.science.uu.nl/~bisse101/Education/PA/pa.html taught by Prof. Rob Bisseling.
